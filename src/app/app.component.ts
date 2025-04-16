@@ -13,6 +13,7 @@ export class AppComponent {
   constructor(private swUpdate: SwUpdate) {
     if (this.swUpdate.isEnabled) {
       this.swUpdate.versionUpdates.subscribe((event) => {
+        console.log('version update', event);
         if (event.type === 'VERSION_READY') {
           console.log('new udate detected')
           // Prompt the user or auto-refresh
