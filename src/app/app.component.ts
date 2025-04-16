@@ -14,6 +14,7 @@ export class AppComponent {
     if (this.swUpdate.isEnabled) {
       this.swUpdate.versionUpdates.subscribe((event) => {
         if (event.type === 'VERSION_READY') {
+          console.log('new udate detected')
           // Prompt the user or auto-refresh
           if (confirm('New version available. Load new version?')) {
             window.location.reload();
